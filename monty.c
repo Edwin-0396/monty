@@ -24,7 +24,16 @@ int main(int argc, char **argv)
 
 	temp_buf = _strdup(buf);
 	token = strtok(temp_buf, "\n");
-	printf("Printed chars:\n%s\nn_words: %d\ntoken: %d\n", buf, count, _strlen(token));
+	printf("Printed chars:\n%s\nn_words: %d\ntoken: %d\n %s\n\n", buf, count, _strlen(token), token);
+
+	
+	while(token)
+	{
+		printf("%s\n", token);
+		token = strtok(NULL, "\n");
+		printf("%d", _strlen(token));
+	}
+
 	free(buf);
 	return (0);
 }
