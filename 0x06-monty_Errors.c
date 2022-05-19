@@ -19,9 +19,9 @@ void argv_error(void)
 * Return: void
 **/
 
-void instruction_error(int line, char *opcode)
+void instruction_error(int line_number, char *opcode)
 {
-	fprintf(stderr, "L%d: unknown instruction %s\n", line, opcode);
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
 	exit(EXIT_FAILURE);
 }
 
