@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
- * argv_error - If user doesnt give file or more than valid arguments
- * Return: void
- **/
+* argv_error - If user doesnt give file or more than valid arguments
+* Return: void
+**/
 
 void argv_error(void)
 {
@@ -12,12 +12,12 @@ void argv_error(void)
 }
 
 /**
- * instruction_error - print message if le to open the
- * file has an invalid instruction
- * @line: line of file
- * @opcode: command to execute.
- * Return: void
- **/
+* instruction_error - print message if le to open the
+* file has an invalid instruction
+* @line: line of file
+* @opcode: command to execute.
+* Return: void
+**/
 
 void instruction_error(int line, char *opcode)
 {
@@ -26,13 +26,25 @@ void instruction_error(int line, char *opcode)
 }
 
 /**
- * malloc_error - Print message if can´t malloc
- * Return: Void
- **/
+* malloc_error - Print message if can´t malloc
+* Return: Void
+**/
 
 void malloc_error(void)
 {
 	fprintf(stderr, "Error: malloc failed\n");
 	free_all();
+	exit(EXIT_FAILURE);
+}
+
+/**
+* pop_error - print error message if the stack is empty
+* @line: line
+* Return: void
+**/
+
+void pop_error(unsigned int line)
+{
+	fprintf(stderr, "L%u: can't pop an empty stack\n", line);
 	exit(EXIT_FAILURE);
 }

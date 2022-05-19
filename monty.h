@@ -78,7 +78,6 @@ void _swap(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 
 /** PROTOTYPES **/
-void malloc_error(void);
 int monty_interpreter(void);
 int opcode_instruction(void);
 int _isnumber(void);
@@ -89,5 +88,6 @@ void free_dlistint(stack_t *head);
 /** ERROR THROWERS **/
 void argv_error(void);
 void instruction_error(int line, char *opcode);
-
+void malloc_error(void);
+void pop_error(unsigned int line)
 #endif
