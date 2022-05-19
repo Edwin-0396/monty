@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "0x01-monty.h"
 
 /**
  * opcode_instruction - compares instructions to opcodes and calls functions
@@ -12,6 +12,8 @@ int opcode_instruction(void)
 		{"push", _push},
 		{"pall", _pall},
 		{"pint", _pint},
+		{"pop", _pop},
+		{"swap", _swap},
         {"nop", _nop},
 		{NULL, NULL}};
 	i = 0;
@@ -26,8 +28,7 @@ int opcode_instruction(void)
 	}
 	if (!OPcode[i].opcode)
 	{
-		fprintf(stderr, "L%lu: unknown instruction %s\n",
-				handle.line_number, handle.token1);
+		instruction_error(handle.line_number, handle.token1);
 		free_all();
 		exit(EXIT_FAILURE);
 	}

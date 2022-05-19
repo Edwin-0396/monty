@@ -73,6 +73,8 @@ handlers handle;
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
+void _swap(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 
 /** PROTOTYPES **/
@@ -85,7 +87,7 @@ void free_all(void);
 void free_dlistint(stack_t *head);
 
 /** ERROR THROWERS **/
-void error_argv(void);
-void invalid_instrution(int line, char *opcode);
+void argv_error(void);
+void instruction_error(int line, char *opcode);
 
 #endif

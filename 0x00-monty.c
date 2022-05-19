@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "0x01-monty.h"
 
 /**
  * main - Main program instructions
@@ -15,7 +15,7 @@ int main(int argc, char **argv)
 	handle.head = NULL;
 
 	if (argc != 2)
-		error_argv();
+		argv_error();
 
 	handle.fp = fopen(argv[1], "r");
 	if (handle.fp == NULL)

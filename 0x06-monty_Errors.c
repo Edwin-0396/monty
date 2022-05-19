@@ -1,11 +1,11 @@
-#include "monty.h"
+#include "0x01-monty.h"
 
 /**
  * error_argv - If user doesnt give file or more than valid arguments
  * Return: void
  **/
 
-void error_argv(void)
+void argv_error(void)
 {
 	fprintf(stderr, "USAGE: monty file\n");
 	exit(EXIT_FAILURE);
@@ -19,7 +19,7 @@ void error_argv(void)
  * Return: void
  **/
 
-void invalid_instrution(int line, char *opcode)
+void instruction_error(int line, char *opcode)
 {
 	fprintf(stderr, "L%d: unknown instruction %s\n", line, opcode);
 	exit(EXIT_FAILURE);

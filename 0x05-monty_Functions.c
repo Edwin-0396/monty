@@ -1,4 +1,4 @@
-#include "monty.h"
+#include "0x01-monty.h"
 
 /**
  * _push - Inserts a node(elemento) to a stack (queue)
@@ -72,14 +72,61 @@ void _pint(stack_t **stack, unsigned int line_number)
 }
 
 /**
-* _nop - Function that do anything
-* @stack: element at the top of the stack (head)
-* @line_number: constant int value in the structure
-* Return: Void
-**/
+ * _pop - Function that deletes the value at top of stack
+ * @stack: element at the top of the stack (head)
+ * @line_number: constant int value in the structure
+ * Return: Void
+ **/
+
+void _pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *tmp = *stack;
+	*stack = (*stack)->prev;
+
+	if ((*stack) != NULL)
+	{
+		(*stack)->next = NULL;
+		free(tmp);
+	}
+	else
+	{
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+}
+
+/**
+ * _swap - Function that swaps the top 2 elements of stack
+ * @stack: element at the top of the stack (head)
+ * @line_number: constant int value in the structure
+ * Return: Void
+ **/
+
+void _swap(stack_t **stack, unsigned int line_number)
+{
+	int i;
+	(void)line_number;
+
+	if (*stack == NULL || (*stack)->prev == NULL)
+	{
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	else
+		i = (*stack)->n;
+	(*stack)->n = (*stack)->prev->n;
+	(*stack)->prev->n = i;
+}
+
+/**
+ * _nop - Function that do anything
+ * @stack: element at the top of the stack (head)
+ * @line_number: constant int value in the structure
+ * Return: Void
+ **/
 
 void _nop(stack_t **stack, unsigned int line_number)
 {
-(void)stack;
-(void)line_number;
+	(void)stack;
+	(void)line_number;
 }
