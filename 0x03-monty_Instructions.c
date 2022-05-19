@@ -13,6 +13,7 @@ int opcode_instruction(void)
 		{"pint", _pint},
 		{"pop", _pop},
 		{"swap", _swap},
+		{"add", _add},
 		{"nop", _nop},
 		{NULL, NULL}};
 	i = 0;

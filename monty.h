@@ -75,6 +75,7 @@ void _pall(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
 void _nop(stack_t **stack, unsigned int line_number);
 
 /** PROTOTYPES **/
@@ -90,5 +91,7 @@ void argv_error(void);
 void instruction_error(int line_number, char *opcode);
 void malloc_error(void);
 void pop_error(unsigned int line_number);
+void swap_error(unsigned int line_number);
+void add_error(unsigned int line_number);
 
 #endif

@@ -12,8 +12,8 @@ void argv_error(void)
 }
 
 /**
-* instruction_error - print message if le to open the
-* file has an invalid instruction
+* instruction_error - Print message if le to open the file
+* has an invalid instruction
 * @line_number: line of file
 * @opcode: command to execute.
 * Return: void
@@ -34,17 +34,5 @@ void malloc_error(void)
 {
 	fprintf(stderr, "Error: malloc failed\n");
 	free_all();
-	exit(EXIT_FAILURE);
-}
-
-/**
-* pop_error - print error message if the stack is empty
-* @line_number: line
-* Return: void
-**/
-
-void pop_error(unsigned int line_number)
-{
-	fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 	exit(EXIT_FAILURE);
 }
