@@ -11,13 +11,10 @@ int monty_interpreter(void)
 	{
 		handle.line_number++;
 		handle.token1 = strtok(handle.buffer, " $\n");
-		if(!handle.token1 || handle.token1[0] == '#')
-			continue;
 
 		if(strcmp(handle.token1, "push") == 0)
 		{
 			handle.token2 = strtok(NULL, "$\n");
-			/*printf("esta aqui!!\n %s \n %ld\n", handle.token2, handle.line_number);*/
 			if(!handle.token2)
 			{
 				fprintf(stderr, "L%lu: usage: push integer\n", handle.line_number);
@@ -42,6 +39,7 @@ int opcode_instruction(void)
 	instruction_t OPcode[] = {
 		{"push", _push}, 
 		{"pall", _pall},
+		{"pint", _pint},
 		{NULL, NULL}};
 	i = 0;
 	while (OPcode[i].opcode)

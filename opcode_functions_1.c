@@ -52,3 +52,21 @@ void _pall(stack_t **stack, unsigned int line_number)
     }
     *stack = tmp;
 }
+
+/**
+* pint - Prints the value at the top of the stack
+* @stack: Element at the top the stack (head)
+* @line_number: Cantsant int value in the structure
+* Return: Void
+**/
+
+void _pint(stack_t **stack, unsigned int line_number)
+{
+    stack_t *tmp = *stack;
+    
+    (void)line_number;
+    if (tmp != NULL)
+        printf("%d\n", tmp->n);
+    else
+        return;
+}

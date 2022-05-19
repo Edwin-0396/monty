@@ -1,4 +1,6 @@
-push 1$
-push 2$
-push 3$
-pall$
+push 1
+pint
+push 48
+pint
+push 1000
+pint

@@ -19,13 +19,10 @@ int main(int argc, char **argv)
 		error_argv();
 
 	handle.fp = fopen(argv[1], "r");
-	if(handle.fp == NULL)
-	{
-		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-		exit(EXIT_FAILURE);
-	}
+	if (handle.fp == NULL)
+		open_error(&argv[1]);
 
 	monty_interpreter();
 
-	return(0);
+	return (0);
 }
