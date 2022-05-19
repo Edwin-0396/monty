@@ -14,7 +14,7 @@ int opcode_instruction(void)
 		{"pint", _pint},
 		{"pop", _pop},
 		{"swap", _swap},
-        {"nop", _nop},
+		{"nop", _nop},
 		{NULL, NULL}};
 	i = 0;
 	while (OPcode[i].opcode)

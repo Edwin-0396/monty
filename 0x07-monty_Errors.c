@@ -1,7 +1,7 @@
 #include "0x01-monty.h"
 
 /**
- * error_argv - If user doesnt give file or more than valid arguments
+ * argv_error - If user doesnt give file or more than valid arguments
  * Return: void
  **/
 
@@ -12,8 +12,8 @@ void argv_error(void)
 }
 
 /**
- * invalid_instrution - print message if le to open the
- * filehas an invalid instruction
+ * instruction_error - print message if le to open the
+ * file has an invalid instruction
  * @line: line of file
  * @opcode: command to execute.
  * Return: void
