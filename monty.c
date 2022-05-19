@@ -1,8 +1,7 @@
 #include "monty.h"
-handlers handle;
 
 /**
- *
+ * main - Main program instructions
  * @argc: total of arguments
  * @argv: The arguments, monty files
  * Return: int
