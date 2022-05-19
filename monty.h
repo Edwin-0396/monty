@@ -8,8 +8,8 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <string.h>
+#include <ctype.h>
 
-#define EMPTY_STR ""
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -41,19 +41,48 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+
+/**
+ * struct handler - helper functions
+ * @token2: pointer to token 1
+ * @buffer: pointer to string returned from getline
+ * @fp: pointer to file
+ * @head: pointer to beginning of list
+ * @line_number: line number of file
+ * @n: number of bytes read
+ * @token1: pointer to token 2
+ * @queueflag: flag for queue function
+ * Description: opcode and its function
+ * for stack, queues, LIFO, FIFO Holberton project
+ */
+typedef struct handler
+{
+	char *token2;
+	char *buffer;
+	FILE *fp;
+	stack_t *head;
+	size_t line_number;
+	size_t n;
+	char *token1;
+	int queueflag;
+} handlers;
+extern handlers handle;
+
+
+/** OP CODE FUNCTIONS **/
+void _push(stack_t **stack, unsigned int line_number);
+void _pall(stack_t **stack, unsigned int line_number);
+
 /** PROTOTYPES **/
-void op_re_file(char **argv);
-char *read_textfile(const char *filename, size_t letters);
+void malloc_error(void);
+int monty_interpreter(void);
+int opcode_instruction(void);
+int _isnumber(void);
 int count_words(char *str);
+
+/** ERROR THROWERS **/
 void error_argv(void);
-
-/* STRING FUNCTIONS */
-int _strlen(const char *s);
-char *_strcpy(char *dest, const char *src);
-char *_strcat(char *dest, char *src);
-int _strcmp(char *s1, char *s2);
-char *_strdup(char *str);
-char *_strconcat(char *s1, char *s2, char *s3);
-
+void open_error(char **argv);
+void invalid_instrution(int line, char *opcode);
 
 #endif
