@@ -1,9 +1,9 @@
 #include "monty.h"
 
 /**
-* opcode_instruction - compares instructions to opcodes and calls functions
-* Return: 0 on success, EXIT_FAILURE on error
-**/
+ * opcode_instruction - compares instructions to opcodes and calls functions
+ * Return: 0 on success, EXIT_FAILURE on error
+ **/
 
 int opcode_instruction(void)
 {
@@ -26,7 +26,7 @@ int opcode_instruction(void)
 	if (!OPcode[i].opcode)
 	{
 		fprintf(stderr, "L%lu: unknown instruction %s\n",
-			handle.line_number, handle.token1);
+				handle.line_number, handle.token1);
 		free_all();
 		exit(EXIT_FAILURE);
 	}

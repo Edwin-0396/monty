@@ -3,7 +3,7 @@
 /**
  * monty_interpreter - processes monty instructions
  * Return: 0 on success, EXIT_FAILURE on error
-**/
+ **/
 
 int monty_interpreter(void)
 {

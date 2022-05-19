@@ -3,7 +3,7 @@
 /**
  * free_all - frees allocated memory
  * Return: Void
-**/
+ **/
 
 void free_all(void)
 {

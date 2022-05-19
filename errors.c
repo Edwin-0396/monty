@@ -11,7 +11,6 @@ void error_argv(void)
 	exit(EXIT_FAILURE);
 }
 
-
 /**
  * invalid_instrution - print message if le to open the
  * filehas an invalid instruction
@@ -34,6 +33,6 @@ void invalid_instrution(int line, char *opcode)
 void malloc_error(void)
 {
 	fprintf(stderr, "Error: malloc failed\n");
-	/*free_everything();*/
+	free_all();
 	exit(EXIT_FAILURE);
 }
