@@ -26,6 +26,7 @@ int main(int argc, char **argv)
 	}
 
 	monty_interpreter();
+	free_all();
 
 	return (0);
 }

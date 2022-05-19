@@ -20,7 +20,7 @@ int monty_interpreter(void)
 			if(!handle.token2)
 			{
 				fprintf(stderr, "L%lu: usage: push integer\n", handle.line_number);
-				/*free_everything();*/
+				free_all();
 				exit(EXIT_FAILURE);
 			}
 			_isnumber();
@@ -58,7 +58,7 @@ int opcode_instruction(void)
 	{
 		fprintf(stderr, "L%lu: unknown instruction %s\n",
 			handle.line_number, handle.token1);
-		/*free_everything();*/
+		free_all();
 		exit(EXIT_FAILURE);
 	}
 	return (0);
@@ -86,10 +86,36 @@ int _isnumber(void)
 		if (!isdigit(handle.token2[i]))
 		{
 			fprintf(stderr, "L%lu: usage: push integer\n", handle.line_number);
-			/*free_everything();*/
+			free_all();
 			exit(EXIT_FAILURE);
 		}
 		i++;
 	}
 	return (0);
+}
+
+/**
+ * free_all - frees allocated memory
+ */
+void free_all(void)
+{
+	free(handle.buffer);
+	free_dlistint(handle.head);
+	fclose(handle.fp);
+}
+
+/**
+ * free_dlistint - free a dlistint_t list
+ * @head: pointer to stack_t struct
+ */
+void free_dlistint(stack_t *head)
+{
+	stack_t *tmp = NULL;
+
+	while (head)
+	{
+		tmp = head->next;
+		free(head);
+		head = tmp;
+	}
 }

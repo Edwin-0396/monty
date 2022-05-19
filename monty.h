@@ -80,6 +80,8 @@ int monty_interpreter(void);
 int opcode_instruction(void);
 int _isnumber(void);
 int count_words(char *str);
+void free_all(void);
+void free_dlistint(stack_t *head);
 
 /** ERROR THROWERS **/
 void error_argv(void);
