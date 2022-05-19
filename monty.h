@@ -83,7 +83,6 @@ int count_words(char *str);
 
 /** ERROR THROWERS **/
 void error_argv(void);
-void open_error(char **argv);
 void invalid_instrution(int line, char *opcode);
 
 #endif

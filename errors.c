@@ -11,17 +11,6 @@ void error_argv(void)
 	exit(EXIT_FAILURE);
 }
 
-/**
- * open_error - print message if its not possible to open the file
- * @argv: arguments received by main, ni this case te filename
- * Return: void
- **/
-
-void open_error(char **argv)
-{
-	fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
-	exit(EXIT_FAILURE);
-}
 
 /**
  * invalid_instrution - print message if le to open the
