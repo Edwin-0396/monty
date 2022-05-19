@@ -87,7 +87,8 @@ void free_dlistint(stack_t *head);
 
 /** ERROR THROWERS **/
 void argv_error(void);
-void instruction_error(int line, char *opcode);
+void instruction_error(int line_number, char *opcode);
 void malloc_error(void);
-void pop_error(unsigned int line)
+void pop_error(unsigned int line_number);
+
 #endif

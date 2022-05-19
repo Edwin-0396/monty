@@ -1,11 +1,11 @@
 #include "monty.h"
 
 /**
- * main - Main program instructions
- * @argc: total of arguments
- * @argv: The arguments, monty files
- * Return: int
- **/
+* main - Main program instructions
+* @argc: total of arguments
+* @argv: The arguments, monty files
+* Return: int
+**/
 
 int main(int argc, char **argv)
 {
