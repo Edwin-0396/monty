@@ -12,6 +12,7 @@ int opcode_instruction(void)
 		{"push", _push},
 		{"pall", _pall},
 		{"pint", _pint},
+        {"nop", _nop},
 		{NULL, NULL}};
 	i = 0;
 	while (OPcode[i].opcode)
