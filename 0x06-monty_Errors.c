@@ -1,4 +1,4 @@
-#include "0x01-monty.h"
+#include "monty.h"
 
 /**
  * argv_error - If user doesnt give file or more than valid arguments

@@ -1,5 +1,4 @@
-#include "0x01-monty.h"
-
+#include "monty.h"
 /**
  * opcode_instruction - compares instructions to opcodes and calls functions
  * Return: 0 on success, EXIT_FAILURE on error

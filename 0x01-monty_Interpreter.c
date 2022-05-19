@@ -1,4 +1,4 @@
-#include "0x01-monty.h"
+#include "monty.h"
 
 /**
  * monty_interpreter - processes monty instructions

@@ -1,5 +1,4 @@
-#include "0x01-monty.h"
-
+#include "monty.h"
 /**
  * _isnumber - determines if string is number
  * Return: 0 on success, exits on failure

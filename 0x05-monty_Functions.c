@@ -1,5 +1,4 @@
-#include "0x01-monty.h"
-
+#include "monty.h"
 /**
  * _nop - Function that do anything
  * @stack: element at the top of the stack (head)

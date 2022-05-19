@@ -1,5 +1,4 @@
-#include "0x01-monty.h"
-
+#include "monty.h"
 /**
  * free_all - frees allocated memory
  * Return: Void
