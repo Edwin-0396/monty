@@ -80,19 +80,18 @@ void _pint(stack_t **stack, unsigned int line_number)
 
 void _pop(stack_t **stack, unsigned int line_number)
 {
-	stack_t *tmp = *stack;
+	stack_t *tmp = NULL;
 
 	if (*stack == NULL)
 		pop_error(line_number);
 
-	*stack = (*stack)->prev;
-
-	if ((*stack) != NULL)
-		(*stack)->next = NULL;
-
+	tmp = *stack;
+	*stack = (*stack)->next;
 	free(tmp);
 
-	(void)line_number;
+	if (*stack)
+		(*stack)->prev = NULL;
+
 }
 
 /**
@@ -104,14 +103,24 @@ void _pop(stack_t **stack, unsigned int line_number)
 
 void _swap(stack_t **stack, unsigned int line_number)
 {
-	int i;
+	int tmp;
+	stack_t *current = *stack;
+	int count = 0;
 
-	if (*stack == NULL || (*stack)->next == NULL)
-		swap_error(line_number);
+	while (current)
+	{
+		count++;
+		current = current->next;
+	}
 
-	i = (*stack)->n;
+	if (count < 2)
+	{
+		if (*stack == NULL || (*stack)->next == NULL)
+			swap_error(line_number);
+	}
+
+	tmp = (*stack)->n;
 	(*stack)->n = (*stack)->next->n;
-	(*stack)->next->n = i;
+	(*stack)->next->n = tmp;
 
-	(void)line_number;
 }
