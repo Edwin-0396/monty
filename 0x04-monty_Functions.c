@@ -106,12 +106,12 @@ void _swap(stack_t **stack, unsigned int line_number)
 {
 	int i;
 
-	if (*stack == NULL || (*stack)->prev == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 		swap_error(line_number);
 
 	i = (*stack)->n;
-	(*stack)->n = (*stack)->prev->n;
-	(*stack)->prev->n = i;
+	(*stack)->n = (*stack)->next->n;
+	(*stack)->next->n = i;
 
 	(void)line_number;
 }
